@@ -8,7 +8,7 @@ public class arraysInt {
 		arrayNew[arrayNew.length - 1] = number;
 		return arrayNew;
 	}
-	
+
 //First version of implementation:
 //	public static int[] insertNumber(int[] array, int index, int number) {
 //		int[] arraySource = { number };
@@ -20,6 +20,9 @@ public class arraysInt {
 
 //Second version of implementation:
 	public static int[] insertNumber(int[] array, int index, int number) {
+		if (index < 0 || index > array.length) {
+			return new int[] {};
+		}
 
 		int[] arrayNew = new int[array.length + 1];
 		arrayNew[index] = number;
@@ -29,6 +32,9 @@ public class arraysInt {
 	}
 
 	public static int[] removeNumber(int[] array, int index) {
+		if (index < 0 || index > array.length) {
+			return new int[] {};
+		}
 		int[] arrayNew = new int[array.length - 1];
 		System.arraycopy(array, 0, arrayNew, 0, index);
 		System.arraycopy(array, index + 1, arrayNew, index, array.length - index - 1);

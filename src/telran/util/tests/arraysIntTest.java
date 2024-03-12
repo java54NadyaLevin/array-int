@@ -22,13 +22,19 @@ class arraysIntTest {
 		int[] arrayExpectedLast = {10, 25, 30, 40, 100, 25};
 		int[] arrayExpectedFirst = {25, 10, 25, 30, 40, 100};
 		int[] arrayExpectedMiddle = {10, 25, 30, 25, 40, 100};
+		int[] arrayExpectedExceptions = {};
 		int[] arrayActualLast = insertNumber(array, 5, 25);
 		int[] arrayActualFirst = insertNumber(array, 0, 25);
 		int[] arrayActualMiddle = insertNumber(array, 3, 25);
+		int[] arrayActualLess0 = insertNumber(array, -3, 25);
+		int[] arrayActualExceedsArrayLength = insertNumber(array, array.length + 10, 25);
+		
 		
 		assertArrayEquals(arrayExpectedLast, arrayActualLast);
 		assertArrayEquals(arrayExpectedFirst, arrayActualFirst);
 		assertArrayEquals(arrayExpectedMiddle, arrayActualMiddle);
+		assertArrayEquals(arrayExpectedExceptions, arrayActualLess0);
+		assertArrayEquals(arrayExpectedExceptions, arrayActualExceedsArrayLength);
 	}
 	
 	@Test
@@ -36,12 +42,18 @@ class arraysIntTest {
 		int[] arrayExpectedLast = {10, 25, 30, 40};
 		int[] arrayExpectedFirst = {25, 30, 40, 100};
 		int[] arrayExpectedMiddle = {10, 25, 40, 100};
+		int[] arrayExpectedExceptions = {};
 		int[] arrayActualLast = removeNumber(array, array.length-1);
 		int[] arrayActualFirst = removeNumber(array, 0);
 		int[] arrayActualMiddle = removeNumber(array, 2);
+		int[] arrayActualLess0 = removeNumber(array, -3);
+		int[] arrayActualExceedsArrayLength = removeNumber(array, array.length + 10);
+		
 		assertArrayEquals(arrayExpectedLast, arrayActualLast);
 		assertArrayEquals(arrayExpectedFirst, arrayActualFirst);
 		assertArrayEquals(arrayExpectedMiddle, arrayActualMiddle);
+		assertArrayEquals(arrayExpectedExceptions, arrayActualLess0);
+		assertArrayEquals(arrayExpectedExceptions, arrayActualExceedsArrayLength);
 		
 	}
 	
