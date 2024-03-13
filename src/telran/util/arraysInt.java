@@ -19,25 +19,31 @@ public class arraysInt {
 //	}
 
 //Second version of implementation:
-	public static int[] insertNumber(int[] array, int index, int number) {
+
+
+
+	public static int[] insertNumber(int[] array, int index, int number){
 		if (index < 0 || index > array.length) {
 			return new int[] {};
 		}
-
 		int[] arrayNew = new int[array.length + 1];
 		arrayNew[index] = number;
 		System.arraycopy(array, 0, arrayNew, 0, index);
 		System.arraycopy(array, index, arrayNew, index + 1, array.length - index);
+
 		return arrayNew;
 	}
+
 
 	public static int[] removeNumber(int[] array, int index) {
 		if (index < 0 || index > array.length) {
 			return new int[] {};
 		}
+
 		int[] arrayNew = new int[array.length - 1];
 		System.arraycopy(array, 0, arrayNew, 0, index);
 		System.arraycopy(array, index + 1, arrayNew, index, array.length - index - 1);
+
 		return arrayNew;
 	}
 
