@@ -95,11 +95,12 @@ class arraysIntTest {
 	@Test
 	void binarySearchIntTest() {
 		int[] arrayNew = {10, 25, 30, 40, 100};
+		int[] arrayEmpty = {};
 		assertEquals(1, Arrays.binarySearch(arrayNew, 25));
 		assertEquals(-5, Arrays.binarySearch(arrayNew, 50));
 		assertEquals(-6, Arrays.binarySearch(arrayNew, 150));
 		assertEquals(-1, Arrays.binarySearch(arrayNew, 0));
-		
+		assertEquals(-1, Arrays.binarySearch(arrayEmpty, 43));
 	}
 
 }
